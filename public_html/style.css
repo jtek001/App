@@ -1,0 +1,651 @@
+/* style.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    padding-top: 70px; /* Adiciona padding para o cabeçalho fixo */
+}
+.header {
+    background-color: #333;
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Permite que os itens quebrem a linha */
+    position: fixed; /* Torna o cabeçalho flutuante */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Garante que o cabeçalho fique acima de outros elementos */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Sutil sombra para destacar */
+    box-sizing: border-box; /* Garante que padding e width funcionem como esperado */
+}
+.header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+.header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap; /* Permite que os itens do menu quebrem a linha */
+    justify-content: flex-end; /* Alinha o menu à direita */
+}
+.header nav ul li {
+    margin-left: 20px;
+}
+.header nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    display: block; /* Garante que o padding e margem funcionem bem */
+}
+.header nav ul li a:hover {
+    background-color: #555;
+}
+.container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.btn {
+    background-color: #007bff;
+    color: white;
+    padding: 4px 8px; /* Ajustado conforme seu último header.php */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin-right: 2px; /* Ajustado conforme seu último header.php */
+    margin-bottom: 2px; /* Adicionado para botes empilhados em telas pequenas */
+}
+.btn-danger {
+    background-color: #dc3545;
+}
+.btn-warning {
+    background-color: #ffc107;
+    color: #333;
+}
+.btn-secondary {
+    background-color: #6c757d;
+}
+.btn:hover {
+    opacity: 0.9;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 12px; /* Ajustado conforme seu último header.php */
+}
+/* Estilos para linhas intercaladas da tabela */
+table tbody tr:nth-child(odd) {
+    background-color: #f9f9f9; /* Cinza claro */
+}
+table tbody tr:nth-child(even) {
+    background-color: #ffffff; /* Branco */
+}
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+table th {
+    background-color: #DEDEDE; /* Ajustado conforme seu último header.php */
+}
+.form-group {
+    margin-bottom: 15px;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group input[type="datetime-local"],
+.form-group input[type="number"], /* Adicionado para o campo de valor */
+.form-group input[type="date"],
+.form-group textarea,
+.form-group select {
+    width: calc(100% - 22px);
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 1em; /* Ajuste para melhor legibilidade em mobile */
+}
+.form-group textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+.form-actions {
+    margin-top: 20px;
+    display: flex; /* Para alinhar botes */
+    flex-wrap: wrap; /* Para quebrar botões em telas pequenas */
+    gap: 10px; /* Espaçamento entre os botões */
+}
+.alert-message {
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+.alert-error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+.alert-warning { /* Novo estilo para alerta de aviso */
+    background-color: #fff3cd;
+    color: #856404;
+    border: 1px solid #ffeeba;
+}
+
+
+/* Dashboard specific styles for cards */
+.dashboard-cards {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+    flex-wrap: wrap; /* Permite que os cards quebrem a linha */
+    gap: 20px; /* Espaçamento entre os cards */
+}
+.dashboard-cards > div {
+    background-color: #e9ecef;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    flex: 1; /* Permite que os cards se estiquem e encolham */
+    min-width: 250px; /* Largura mínima para o card */
+    box-sizing: border-box; /* Inclui padding no width */
+}
+.dashboard-cards h3 {
+    margin-top: 0;
+    font-size: 1.2em;
+}
+.dashboard-cards p {
+    font-size: 2em;
+    font-weight: bold;
+    margin: 10px 0;
+}
+/* Chart specific styles */
+.chart-container {
+    width: 100%;
+    max-width: 300px; /* Alterado para 300px para diminuir o tamanho */
+    margin: 30px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.chart-container.bar-chart { /* Novo estilo para o gráfico de barras */
+    max-width: 800px; /* Pode ser um pouco maior para barras */
+}
+.chart-container.pareto-chart { /* Novo estilo para o gráfico de Pareto */
+    max-width: 800px; /* Mais largo para acomodar barras e linha */
+    margin-top: 40px;
+}
+
+/* Layout responsivo para gráficos lado a lado */
+.charts-row {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin: 20px 0;
+}
+
+.charts-row .chart-container {
+    flex: 1;
+    min-width: 300px;
+    max-width: 400px;
+    margin: 0;
+}
+
+/* Estilo específico para gráfico de barras horizontais de serviços */
+.chart-container:has(#serviceGroupsChart) {
+    max-width: 800px;
+    min-height: 400px;
+}
+
+
+/* Estilos para o formulário de filtro (list_service_orders.php e reports.php) */
+.filter-form {
+    background-color: #e9ecef;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: flex-end;
+}
+.filter-form .form-group {
+    flex: 1; /* Permite que os grupos de formulário ocupem espaço */
+    min-width: 180px; /* Largura mnima para cada grupo */
+}
+
+/* --- Media Queries para Responsividade --- */
+
+/* Botão de menu (hambúrguer) */
+.menu-toggle {
+    display: none; /* Oculto por padrão em telas grandes */
+    background: none;
+    border: none;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    padding: 0 10px;
+}
+
+/* Para telas menores que 768px (tablets e smartphones) */
+@media (max-width: 768px) {
+    body {
+        padding-top: 120px; /* Ajusta o padding para o cabeçalho fixo maior em mobile */
+    }
+    .header {
+        flex-direction: row; /* Mantm o título e o menu-toggle na mesma linha */
+        align-items: center;
+        justify-content: space-between; /* Espaça título e botão */
+        flex-wrap: wrap;
+    }
+    .header h1 {
+        margin-bottom: 0; /* Remove a margem inferior em mobile */
+    }
+    .header nav {
+        width: 100%; /* Ocupa a largura total para o menu dropdown */
+        order: 1; /* Coloca a navegação abaixo do título/botão */
+        padding: 0; /* Ajusta padding para o menu dropdown */
+        background-color: #333; /* Mantém a cor do cabeçalho */
+    }
+    .header nav ul {
+        flex-direction: column; /* Empilha os itens do menu */
+        width: 100%;
+        justify-content: flex-start;
+        display: none; /* Oculta o menu por padrão em mobile */
+        background-color: #444; /* Cor de fundo para o menu dropdown */
+        padding: 10px 0;
+        border-radius: 0 0 8px 8px;
+    }
+    .header nav ul.active { /* Classe para mostrar o menu */
+        display: flex;
+    }
+    .header nav ul li {
+        margin: 0; /* Remove a margem lateral */
+        border-bottom: 1px solid #555; /* Separador entre itens */
+    }
+    .header nav ul li:last-child {
+        border-bottom: none; /* Remove o separador do último item */
+    }
+    .header nav ul li a {
+        padding: 12px 20px; /* Aumenta o padding para facilitar o toque */
+        text-align: left;
+    }
+    .menu-toggle {
+        display: block; /* Exibe o botão de menu em telas pequenas */
+    }
+
+
+    .container {
+        padding: 15px;
+        margin: 10px auto;
+    }
+
+    /* Ajuste para tabelas em telas pequenas */
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+
+    /* Oculta o cabealho da tabela */
+    thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    table tr {
+        border: 1px solid #ccc;
+        margin-bottom: 10px;
+        border-radius: 4px;
+    }
+
+    table td {
+        border: none;
+        border-bottom: 1px solid #eee;
+        position: relative;
+        padding-left: 50%; /* Espaço para o label */
+        text-align: right;
+    }
+
+    table td:before {
+        position: absolute;
+        top: 6px;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        text-align: left;
+        font-weight: bold;
+    }
+
+    /* Labels para cada celula da tabela (list_expenses.php) */
+    .list_faturamento table td:nth-of-type(1):before { content: "Descriçao"; }
+    .list_faturamento table td:nth-of-type(2):before { content: "Valor"; }
+    .list_faturamento table td:nth-of-type(3):before { content: "Data"; }
+    .list_faturamento table td:nth-of-type(4):before { content: "Categoria"; }
+    .list_faturamento table td:nth-of-type(5):before { content: "Observações"; }
+    .list_faturamento table td:nth-of-type(6):before { content: "Ações"; }
+
+        /* Labels para cada celula da tabela de faturamento */
+        .table td:nth-of-type(1):before { content: "OS"; }
+        .table td:nth-of-type(2):before { content: "Cliente"; }
+        .table td:nth-of-type(3):before { content: "Status"; }
+        .table td:nth-of-type(4):before { content: "Status Pagamento"; }
+        .table td:nth-of-type(5):before { content: "Valor"; }
+        .table td:nth-of-type(6):before { content: "Data Abertura"; }
+        .table td:nth-of-type(7):before { content: "Data Pagamento"; }
+        .table td:nth-of-type(8):before { content: "Data DANFSe"; }
+
+    /* Labels para a tabela de Ordens de Servio (redefinidos para evitar conflito) */
+    .list_orders td:nth-of-type(1):before { content: "Cliente"; }
+    .list_orders td:nth-of-type(2):before { content: "Descrição"; }
+    .list_orders td:nth-of-type(3):before { content: "Status"; }
+    .list_orders td:nth-of-type(4):before { content: "Valor"; }
+    .list_orders td:nth-of-type(5):before { content: "Data Abertura"; }
+    .list_orders td:nth-of-type(6):before { content: "Data Fechamento"; }
+    .list_orders td:nth-of-type(7):before { content: "Ações"; }
+
+
+    /* Ajuste para a tabela de Clientes */
+    .list_clients_table td:nth-of-type(1):before { content: "Nome"; }
+    .list_clients_table td:nth-of-type(3):before { content: "Telefone"; }
+    .list_clients_table td:nth-of-type(4):before { content: "Email"; }  
+    .list_clients_table td:nth-of-type(2):before { content: "Cnpj/Cpf"; }
+    .list_clients_table td:nth-of-type(5):before { content: "Ações"; }
+
+    /* Ajuste para a tabela do Dashboard (Últimas Ordens de Servicos) */
+    .dashboard-latest-os table td:nth-of-type(1):before { content: "Cliente"; }
+    .dashboard-latest-os table td:nth-of-type(2):before { content: "Descrição"; }
+    .dashboard-latest-os table td:nth-of-type(3):before { content: "Valor"; }
+    .dashboard-latest-os table td:nth-of-type(4):before { content: "Abertura"; }
+    .dashboard-latest-os table td:nth-of-type(5):before { content: "Fechamento"; }
+    
+    /* Ajuste para a tabela do report (inserida manualmente) */
+    .list_report table td:nth-of-type(1):before { content: "Cliente"; }
+	.list_report table td:nth-of-type(2):before { content: "Descrição"; }
+    .list_report table td:nth-of-type(3):before { content: "Status"; }
+    .list_report table td:nth-of-type(4):before { content: "Valor"; }
+    .list_report table td:nth-of-type(5):before { content: "Pagamento"; }
+    .list_report table td:nth-of-type(6):before { content: "Abertura"; }
+    .list_report table td:nth-of-type(7):before { content: "Fechamento"; }
+
+        /* Ajuste para a tabela de produtos */
+        .list_products table td:nth-of-type(1):before { content: "Código"; }
+        .list_products table td:nth-of-type(2):before { content: "Nome"; }
+        .list_products table td:nth-of-type(3):before { content: "Categoria"; }
+        .list_products table td:nth-of-type(4):before { content: "Marca"; }
+        .list_products table td:nth-of-type(5):before { content: "Preço"; }
+        .list_products table td:nth-of-type(6):before { content: "Estoque"; }
+        .list_products table td:nth-of-type(7):before { content: "Status"; }
+        .list_products table td:nth-of-type(8):before { content: "Ações"; }
+
+                /* Ajuste para a tabela de produtos */
+                .list_danfse table td:nth-of-type(1):before { content: "OS"; }
+                .list_danfse table td:nth-of-type(2):before { content: "Cliente"; }
+                .list_danfse table td:nth-of-type(3):before { content: "Status"; }
+                .list_danfse table td:nth-of-type(4):before { content: "Status Pagamento"; }
+                .list_danfse table td:nth-of-type(5):before { content: "Valor"; }
+                .list_danfse table td:nth-of-type(6):before { content: "Data Abertura"; }
+                .list_danfse table td:nth-of-type(7):before { content: "Data Pagamento"; }
+                .list_danfse table td:nth-of-type(8):before { content: "DANFSe"; }
+	
+	list_orders
+
+
+    .dashboard-cards {
+        flex-direction: column; /* Empilha os cards */
+        align-items: center;
+    }
+    .dashboard-cards > div {
+        width: 90%; /* Ocupa quase toda a largura disponvel */
+        min-width: unset; /* Remove o min-width para flexibilidade */
+    }
+
+    .filter-form {
+        flex-direction: column; /* Empilha os filtros */
+        align-items: stretch; /* Estica os campos para preencher */
+    }
+    .filter-form .form-group {
+        min-width: unset; /* Remove min-width */
+    }
+    .filter-form .btn {
+        width: 100%; /* Botões ocupam a largura total */
+        margin-right: 0;
+    }
+    .chart-container {
+        width: 90%;
+        margin: 20px auto;
+    }
+    .chart-container.bar-chart {
+        max-width: 90%; /* Ajuste para telas menores */
+    }
+    .chart-container.bar-chart,
+    .chart-container.pareto-chart { /* Ajuste para telas menores */
+        max-width: 90%;
+    }
+    
+    /* Layout responsivo para gráficos lado a lado em telas menores */
+    .charts-row {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .charts-row .chart-container {
+        width: 90%;
+        max-width: 100%;
+        min-width: unset;
+    }
+}
+
+/* Para telas menores que 480px (smartphones muito pequenos) */
+@media (max-width: 480px) {
+    .container {
+        padding: 10px;
+        margin: 5px auto;
+    }
+    .btn {
+        padding: 10px 12px; /* Aumenta o padding do boto */
+        font-size: 13px;
+    }
+    .form-group input[type="text"],
+    .form-group input[type="email"],
+    .form-group input[type="tel"],
+    .form-group input[type="datetime-local"],
+    .form-group input[type="number"], /* Adicionado para o campo de valor */
+    .form-group textarea,
+    .form-group select {
+        padding: 8px; /* Reduz o padding dos inputs */
+    }
+}
+
+/* Estilos do Rodapé - seguindo padrão do cabeçalho */
+.footer {
+    background-color: #333;
+    color: white;
+    padding: 15px 20px;
+    margin-top: 40px;
+    text-align: center;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.2);
+    box-sizing: border-box;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-text {
+    margin: 0;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.footer-subtext {
+    margin: 5px 0 0 0;
+    font-size: 12px;
+    color: #adb5bd;
+    opacity: 0.8;
+}
+
+/* Estilos para Modal de Exclusão */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    max-width: 500px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid #ddd;
+    background-color: #f8f9fa;
+    border-radius: 8px 8px 0 0;
+}
+
+.modal-header h3 {
+    margin: 0;
+    color: #333;
+    font-size: 18px;
+}
+
+.modal-close {
+    font-size: 24px;
+    font-weight: bold;
+    color: #aaa;
+    cursor: pointer;
+    line-height: 1;
+    padding: 0;
+    background: none;
+    border: none;
+}
+
+.modal-close:hover {
+    color: #000;
+}
+
+.modal-body {
+    padding: 20px;
+}
+
+.modal-warning {
+    background-color: #fff3cd;
+    color: #856404;
+    border: 1px solid #ffeeba;
+    border-radius: 4px;
+    padding: 12px;
+    margin-top: 15px;
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    padding: 20px;
+    border-top: 1px solid #ddd;
+    background-color: #f8f9fa;
+    border-radius: 0 0 8px 8px;
+}
+
+.btn-disabled {
+    background-color: #6c757d !important;
+    cursor: not-allowed !important;
+    opacity: 0.6 !important;
+}
+
+.btn-disabled:hover {
+    opacity: 0.6 !important;
+}
+
+/* Responsividade para o modal */
+@media (max-width: 768px) {
+    .modal-content {
+        width: 95%;
+        margin: 10px;
+    }
+    
+    .modal-header,
+    .modal-body,
+    .modal-footer {
+        padding: 15px;
+    }
+    
+    .modal-footer {
+        flex-direction: column;
+    }
+    
+    .modal-footer .btn {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 5px;
+    }
+}
+
+/* Estilos para badges de status */
+.status-badge {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.status-pendente {
+    background-color: #ffc107;
+    color: #000;
+}
+
+.status-pago {
+    background-color: #28a745;
+    color: #fff;
+}
