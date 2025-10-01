@@ -211,7 +211,7 @@ public_html/
 2. **Configuração do Banco de Dados**
    ```sql
    -- Importe o arquivo SQL fornecido
-   mysql -u root -p < app_app-09092025.sql
+   mysql -u root -p < app_backup.sql
    ```
 
 3. **Configuração da Conexão**
